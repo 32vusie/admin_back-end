@@ -1,17 +1,8 @@
-<?php
-
-$host     = "localhost";//Ip of database, in this case my host machine    
-$user     = "root";	//Username to use
-$pass     = "";//Password for that user
-$dbname   = "s32d_DB";//Name of the database
-
+<?php 
 try {
-    $connection = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
-    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-}catch(PDOException $e)
-{
-    echo $e->getMessage();                         
+    $db = new PDO('mysql:host=localhost;dbname=s32d_db;charset=utf8mb4', 'root', '');
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);  
+    } catch (PDOException $e) {
+    echo "Connection failed : ". $e->getMessage();
 }
-
-?>

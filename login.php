@@ -14,10 +14,11 @@
         </div>
 
         <!-- Login Form -->
-        <form>
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-        <input type="submit" class="fadeIn fourth" value="Log In">
+        <form method="post" action="php/core/Login/admin-login.php">
+        <input type="text" id="username" class="fadeIn second" name="username" placeholder="Username">
+        <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" >
+        <input type="submit" name="submitBtnLogin" id="submitBtnLogin" class="fadeIn fourth" value="Login">
+        <span class="loginMsg"><?php echo @$msg ?></span>
         </form>
 
         <!-- Remind Passowrd -->
